@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HelpCircle, ArrowLeft, Thermometer, FirstAid, Trash, Key } from 'lucide-react';
+import { HelpCircle, ArrowLeft, Thermometer, Stethoscope, Trash, Key } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -47,7 +47,7 @@ const OtherPage = () => {
               <AccordionItem value="medical">
                 <AccordionTrigger className="py-4">
                   <div className="flex items-center">
-                    <FirstAid className="h-5 w-5 mr-2 text-muted-foreground" />
+                    <Stethoscope className="h-5 w-5 mr-2 text-muted-foreground" />
                     <span>First Aid & Emergencies</span>
                   </div>
                 </AccordionTrigger>

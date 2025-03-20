@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Wifi, ArrowLeft, Copy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 import PageTransition from '@/components/layout/PageTransition';
 
 const WifiPage = () => {
