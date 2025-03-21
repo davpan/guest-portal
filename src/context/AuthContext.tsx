@@ -15,7 +15,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return storedAuth === 'true';
   });
 
-  const correctPassword = import.meta.env.VITE_SITE_PASSWORD;  // Load password from environment variable
+  // Use environment variable password or fallback for production
+  const correctPassword = import.meta.env.VITE_SITE_PASSWORD || 'welcome';  // Fallback password for production
 
   const login = (password: string): boolean => {
     const isCorrect = password === correctPassword;
