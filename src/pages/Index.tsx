@@ -17,20 +17,15 @@ const Index = () => {
 
   return (
     <PageTransition>
-      <div className="container max-w-4xl mx-auto">
+      <div className="container max-w-4xl mx-auto px-3">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl font-bold tracking-tight mb-4">Welcome to 27 Ramona</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to know for a comfortable stay
-          </p>
-        </motion.div>
+          className="mb-4"
+        />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
           {menuItems.map((item, index) => (
             <ActionCard
               key={item.title}
