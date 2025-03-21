@@ -12,15 +12,7 @@
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
       (function(l) {
-        console.log('SPA Script - Initial:', {
-          search: l.search,
-          pathname: l.pathname,
-          hostname: l.hostname,
-          href: l.href
-        });
-
         if (l.search[1] === '/' ) {
-          console.log('SPA Script - Redirect detected');
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
@@ -28,26 +20,16 @@
           
           // Handle /guest-portal base path in production
           if (!newPath.startsWith('/guest-portal') && window.location.hostname !== 'localhost') {
-            console.log('SPA Script - Adding base path');
             newPath = '/guest-portal' + newPath;
           }
-
-          console.log('SPA Script - Final path:', {
-            newPath: newPath,
-            decoded: decoded,
-            hash: l.hash,
-            finalURL: newPath + decoded + l.hash
-          });
 
           window.history.replaceState(null, null,
               newPath + decoded + l.hash
           );
-        } else {
-          console.log('SPA Script - No redirect needed');
         }
       }(window.location))
     </script>
-    <script type="module" crossorigin src="/guest-portal/assets/index-DlKC_FLP.js"></script>
+    <script type="module" crossorigin src="/guest-portal/assets/index-NCIdpHAm.js"></script>
     <link rel="stylesheet" crossorigin href="/guest-portal/assets/index-Bj32va1k.css">
   </head>
 
