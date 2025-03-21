@@ -24,13 +24,13 @@ const ActionCard = ({ title, description, icon: Icon, to, delay = 0 }: ActionCar
       }}
     >
       <Link to={to} className="block h-full">
-        <div className="glass h-full rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-          <div className="mb-4 inline-flex p-3 rounded-xl bg-primary/5">
-            <Icon className="h-6 w-6 text-primary" />
+        <div className="glass h-full rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <div className="mb-3 inline-flex p-2 rounded-xl bg-primary/5">
+            <Icon className="h-5 w-5 text-primary" />
           </div>
-          <h3 className="text-lg font-medium mb-2">{title}</h3>
+          <h3 className="text-base font-medium mb-1">{title}</h3>
           {description && (
-            <p className="text-sm text-muted-foreground">{description}</p>
+            <p className="text-xs text-muted-foreground line-clamp-2">{description}</p>
           )}
         </div>
       </Link>
