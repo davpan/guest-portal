@@ -8,8 +8,12 @@ import { toast } from 'sonner';
 import PageTransition from '@/components/layout/PageTransition';
 
 const WifiPage = () => {
-  const networkName = "RamonaWifi";
-  const password = "guest1234";
+  const networkName = import.meta.env.VITE_WIFI_NETWORK;
+  const password = import.meta.env.VITE_WIFI_PASSWORD;
+
+  if (!networkName || !password) {
+    throw new Error('VITE_WIFI_NETWORK and VITE_WIFI_PASSWORD environment variables must be set');
+  }
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
@@ -77,7 +81,7 @@ const WifiPage = () => {
         <div className="glass p-4 rounded-lg mt-8">
           <h3 className="font-medium mb-2">Additional Notes</h3>
           <p className="text-sm text-muted-foreground">
-            The wifi signal is strongest in the living room and kitchen. If you experience connectivity issues, try moving closer to these areas.
+            We really advise using the wifi. Cellular signal is not very reliable with some networks.
           </p>
         </div>
       </div>

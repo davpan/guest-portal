@@ -1,13 +1,17 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CircleParking, ArrowLeft, Car, Clock } from 'lucide-react';
+import { CircleParking, ArrowLeft, Car } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import PageTransition from '@/components/layout/PageTransition';
 
 const ParkingPage = () => {
+  const garageCode = import.meta.env.VITE_GARAGE_CODE;
+
+  if (!garageCode) {
+    throw new Error('VITE_GARAGE_CODE environment variable must be set');
+  }
   return (
     <PageTransition>
       <div className="container max-w-2xl mx-auto">
@@ -20,13 +24,7 @@ const ParkingPage = () => {
           <h1 className="text-3xl font-bold">Parking Information</h1>
         </div>
 
-        <Alert className="mb-6 border-amber-300 bg-amber-50 dark:bg-amber-950/30">
-          <Clock className="h-4 w-4 text-amber-600 dark:text-amber-500" />
-          <AlertTitle className="text-amber-800 dark:text-amber-400">Street Cleaning</AlertTitle>
-          <AlertDescription className="text-amber-700 dark:text-amber-300">
-            Remember: No parking on the north side of Ramona Ave on Mondays between 10AM-2PM.
-          </AlertDescription>
-        </Alert>
+
 
         <Card className="mb-6">
           <CardHeader className="bg-primary/5 pb-4">
@@ -42,17 +40,7 @@ const ParkingPage = () => {
               <div className="flex items-start">
                 <Car className="h-5 w-5 mr-2 text-muted-foreground flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-muted-foreground">
-                  You may park in the driveway. Please keep to the right side to allow space for the resident's vehicle.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-medium mb-2">Street Parking</h3>
-              <div className="flex items-start">
-                <Car className="h-5 w-5 mr-2 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-muted-foreground">
-                  Street parking is available directly in front of the house and across the street. Please check signs for restrictions.
+                  If there is no car directly in front of our driveway, you can block the driveway. Please don't block the sidewalk though. Let us know if you do this so we can inform our neighbors.
                 </p>
               </div>
             </div>
@@ -61,20 +49,22 @@ const ParkingPage = () => {
               <h3 className="font-medium mb-2">Garage</h3>
               <div className="flex items-start">
                 <Car className="h-5 w-5 mr-2 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-muted-foreground">
-                  The garage is not available for guest parking.
-                </p>
+                <div className="space-y-2">
+                  <p className="text-sm text-muted-foreground">
+                    You may park in the garage. The garage code is:
+                  </p>
+                  <p className="text-lg font-mono font-medium">{garageCode}</p>
+                  <p className="text-sm text-muted-foreground">
+                    Please park in the left spot of the garage. Make sure to close the garage door after entering and exiting.
+                  </p>
+                </div>
               </div>
             </div>
+
           </CardContent>
         </Card>
 
-        <div className="glass p-4 rounded-lg mt-8">
-          <h3 className="font-medium mb-2">Visitor Permits</h3>
-          <p className="text-sm text-muted-foreground">
-            If you're staying longer than 3 days, you'll need a visitor parking permit for street parking. Please let your host know in advance.
-          </p>
-        </div>
+
       </div>
     </PageTransition>
   );

@@ -31,39 +31,32 @@ const LightingPage = () => {
             <div>
               <h3 className="font-medium mb-2">Living Room</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                The living room has three light switches located by the main entrance:
+                The living room lights are controlled by switches at the top of the stairs:
               </p>
               <ul className="list-disc list-inside text-sm text-muted-foreground pl-2 space-y-1">
-                <li>Left switch controls the ceiling lights</li>
-                <li>Middle switch controls the floor lamp</li>
-                <li>Right switch controls the accent lighting</li>
+                <li>The hue controller is what we normally use</li>
+                <li>The switches to the right of the hue controller are for the ceiling lights</li>
               </ul>
             </div>
 
             <div>
               <h3 className="font-medium mb-2">Kitchen</h3>
               <p className="text-sm text-muted-foreground mb-2">
-                Kitchen lights are controlled by the panel next to the refrigerator:
+                Kitchen has two main light switches:
               </p>
               <ul className="list-disc list-inside text-sm text-muted-foreground pl-2 space-y-1">
-                <li>Top button for overhead lights</li>
-                <li>Bottom button for under-cabinet lighting</li>
+                <li>To the left of the stove is the switch for under cabinet lighting</li>
+                <li>To the left of the bathroom door are the switches for overhead lighting</li>
               </ul>
             </div>
 
-            <div>
-              <h3 className="font-medium mb-2">Bedrooms</h3>
-              <p className="text-sm text-muted-foreground">
-                Each bedroom has a switch by the door and additional controls on the nightstands.
-              </p>
-            </div>
           </CardContent>
         </Card>
 
         <div className="glass p-4 rounded-lg mt-8">
           <h3 className="font-medium mb-2">Automatic Lights</h3>
           <p className="text-sm text-muted-foreground">
-            The outdoor lights automatically turn on at sunset and off at sunrise. Please do not adjust the timers.
+            The living room lights automatically turn on at sunset and off at sunrise.
           </p>
         </div>
       </div>

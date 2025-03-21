@@ -8,10 +8,10 @@ import PageTransition from '@/components/layout/PageTransition';
 const Index = () => {
   const menuItems = [
     { title: 'Wifi', description: 'Get connected to the internet', icon: Wifi, to: '/wifi' },
-    { title: 'Lighting', description: 'Control the lights around the house', icon: Lightbulb, to: '/lighting' },
-    { title: 'TV', description: 'Instructions for using the television', icon: Tv, to: '/tv' },
-    { title: 'Music', description: 'How to play music through the speakers', icon: Music, to: '/music' },
     { title: 'Parking', description: 'Where to park your vehicle', icon: CircleParking, to: '/parking' },
+    { title: 'Lighting', description: 'Control the lights around the house', icon: Lightbulb, to: '/lighting' },
+    { title: 'Music', description: 'How to play music through the speakers', icon: Music, to: '/music' },
+    { title: 'TV', description: 'Instructions for using the television', icon: Tv, to: '/tv' },
     { title: 'Other', description: 'Additional helpful information', icon: HelpCircle, to: '/other' },
   ];
 

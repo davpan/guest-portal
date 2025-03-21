@@ -33,14 +33,11 @@ const TVPage = () => {
               <div>
                 <h3 className="font-medium mb-2">Basic Controls</h3>
                 <p className="text-sm text-muted-foreground mb-2">
-                  Use the black Samsung remote for basic TV functions:
+                  Press the power button on the black Samsung remote to turn on the TV
                 </p>
-                <ul className="list-disc list-inside text-sm text-muted-foreground pl-2 space-y-1">
-                  <li>Power button (top right)</li>
-                  <li>Volume controls (left side)</li>
-                  <li>Channel controls (right side)</li>
-                  <li>Input selection (press Input button)</li>
-                </ul>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Press the home button on the silver Apple remote to start using the Apple TV
+                </p>
               </div>
 
               <Separator />
@@ -48,13 +45,13 @@ const TVPage = () => {
               <div>
                 <h3 className="font-medium mb-2">Streaming Services</h3>
                 <p className="text-sm text-muted-foreground mb-2">
-                  You have access to the following streaming services:
+                  The following streaming services are signed in and ready to use:
                 </p>
                 <ul className="list-disc list-inside text-sm text-muted-foreground pl-2 space-y-1">
-                  <li>Netflix (Guest profile already set up)</li>
-                  <li>YouTube (No login required)</li>
-                  <li>Prime Video (Already signed in)</li>
-                  <li>Disney+ (Already signed in)</li>
+                  <li>Netflix</li>
+                  <li>Max</li>
+                  <li>Apple TV+</li>
+                  <li>YouTube</li>
                 </ul>
               </div>
 
@@ -69,13 +66,6 @@ const TVPage = () => {
             </div>
           </CardContent>
         </Card>
-
-        <div className="glass p-4 rounded-lg mt-8">
-          <h3 className="font-medium mb-2">Troubleshooting</h3>
-          <p className="text-sm text-muted-foreground">
-            If the TV doesn't respond, try unplugging it for 10 seconds, then plugging it back in. For additional help, text the host at the number provided.
-          </p>
-        </div>
       </div>
     </PageTransition>
   );
