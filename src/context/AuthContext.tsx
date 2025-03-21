@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type AuthContextType = {
@@ -16,7 +15,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return storedAuth === 'true';
   });
 
-  const correctPassword = "27ramona"; // The password for the site
+  const correctPassword = import.meta.env.VITE_SITE_PASSWORD;  // Load password from environment variable
 
   const login = (password: string): boolean => {
     const isCorrect = password === correctPassword;
