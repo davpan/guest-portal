@@ -7,10 +7,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import PageTransition from '@/components/layout/PageTransition';
 
 const ParkingPage = () => {
-  const garageCode = import.meta.env.VITE_GARAGE_CODE;
+  const garageCode = import.meta.env.VITE_GARAGE_CODE || 'Garage code not configured';
 
-  if (!garageCode) {
-    throw new Error('VITE_GARAGE_CODE environment variable must be set');
+  if (!import.meta.env.VITE_GARAGE_CODE) {
+    console.warn('VITE_GARAGE_CODE environment variable is not set');
   }
   return (
     <PageTransition>
@@ -21,7 +21,7 @@ const ParkingPage = () => {
               <ArrowLeft className="h-5 w-5" />
             </Link>
           </Button>
-          <h1 className="text-3xl font-bold">Parking Information</h1>
+          <h1 className="text-3xl font-bold">Parking</h1>
         </div>
 
 

@@ -16,7 +16,7 @@ const LightingPage = () => {
               <ArrowLeft className="h-5 w-5" />
             </Link>
           </Button>
-          <h1 className="text-3xl font-bold">Lighting Controls</h1>
+          <h1 className="text-3xl font-bold">Lighting</h1>
         </div>
 
         <Card className="mb-6">

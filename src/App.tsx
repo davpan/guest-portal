@@ -18,7 +18,6 @@ import Other from "./pages/Other";
 import NotFound from "./pages/NotFound";
 
 import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
 
 const queryClient = new QueryClient();
 
@@ -46,7 +45,6 @@ const AppRoutes = () => {
             <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
               <Index />
             </main>
-            <Footer />
           </div>
         </ProtectedRoute>
       } />
@@ -58,7 +56,6 @@ const AppRoutes = () => {
             <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
               <Wifi />
             </main>
-            <Footer />
           </div>
         </ProtectedRoute>
       } />
@@ -70,7 +67,6 @@ const AppRoutes = () => {
             <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
               <Lighting />
             </main>
-            <Footer />
           </div>
         </ProtectedRoute>
       } />
@@ -82,7 +78,6 @@ const AppRoutes = () => {
             <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
               <TV />
             </main>
-            <Footer />
           </div>
         </ProtectedRoute>
       } />
@@ -94,7 +89,6 @@ const AppRoutes = () => {
             <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
               <Music />
             </main>
-            <Footer />
           </div>
         </ProtectedRoute>
       } />
@@ -106,7 +100,6 @@ const AppRoutes = () => {
             <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
               <Parking />
             </main>
-            <Footer />
           </div>
         </ProtectedRoute>
       } />
@@ -118,7 +111,6 @@ const AppRoutes = () => {
             <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
               <Other />
             </main>
-            <Footer />
           </div>
         </ProtectedRoute>
       } />
@@ -134,7 +126,7 @@ const App = () => (
       <AuthProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <BrowserRouter basename={import.meta.env.BASE_URL || '/'}>
           <AnimatePresence mode="wait">
             <AppRoutes />
           </AnimatePresence>

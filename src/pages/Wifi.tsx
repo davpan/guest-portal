@@ -8,11 +8,11 @@ import { toast } from 'sonner';
 import PageTransition from '@/components/layout/PageTransition';
 
 const WifiPage = () => {
-  const networkName = import.meta.env.VITE_WIFI_NETWORK;
-  const password = import.meta.env.VITE_WIFI_PASSWORD;
+  const networkName = import.meta.env.VITE_WIFI_NETWORK || 'Network name not configured';
+  const password = import.meta.env.VITE_WIFI_PASSWORD || 'Password not configured';
 
-  if (!networkName || !password) {
-    throw new Error('VITE_WIFI_NETWORK and VITE_WIFI_PASSWORD environment variables must be set');
+  if (!import.meta.env.VITE_WIFI_NETWORK || !import.meta.env.VITE_WIFI_PASSWORD) {
+    console.warn('VITE_WIFI_NETWORK and/or VITE_WIFI_PASSWORD environment variables are not set');
   }
 
   const copyToClipboard = (text: string, type: string) => {
@@ -29,7 +29,7 @@ const WifiPage = () => {
               <ArrowLeft className="h-5 w-5" />
             </Link>
           </Button>
-          <h1 className="text-3xl font-bold">Wifi Information</h1>
+          <h1 className="text-3xl font-bold">Wifi</h1>
         </div>
 
         <Card className="mb-6 overflow-hidden">

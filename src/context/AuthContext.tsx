@@ -15,14 +15,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return storedAuth === 'true';
   });
 
-  // Use environment variable password
-  const correctPassword = import.meta.env.VITE_SITE_PASSWORD;
-  
-  if (!correctPassword) {
-    throw new Error('VITE_SITE_PASSWORD environment variable is not set');
-  }
-
   const login = (password: string): boolean => {
+    const correctPassword = import.meta.env.VITE_SITE_PASSWORD;
+    
+    if (!correctPassword) {
+      console.error('VITE_SITE_PASSWORD environment variable is not set');
+      return false;
+    }
+
     const isCorrect = password === correctPassword;
     if (isCorrect) {
       setIsAuthenticated(true);
