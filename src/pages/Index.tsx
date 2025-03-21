@@ -17,15 +17,8 @@ const Index = () => {
 
   return (
     <PageTransition>
-      <div className="container max-w-4xl mx-auto px-3">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-4"
-        />
-
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="container max-w-4xl mx-auto px-3 min-h-[calc(100vh-theme(spacing.16))]">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 py-4">
           {menuItems.map((item, index) => (
             <ActionCard
               key={item.title}
