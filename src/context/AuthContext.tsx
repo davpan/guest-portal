@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type AuthContextType = {
+export type AuthContextType = {
   isAuthenticated: boolean;
   login: (password: string) => boolean;
   logout: () => void;
 };
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Check if the user is already authenticated from local storage
@@ -16,11 +16,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   });
 
   const login = (password: string): boolean => {
-    const correctPassword = import.meta.env.VITE_SITE_PASSWORD;
+    const correctPassword = import.meta.env.VITE_SITE_PASSWORD || 'guest';
     
-    if (!correctPassword) {
-      console.error('VITE_SITE_PASSWORD environment variable is not set');
-      return false;
+    if (!import.meta.env.VITE_SITE_PASSWORD) {
+      console.warn('VITE_SITE_PASSWORD environment variable is not set, using default password "guest"');
     }
 
     const isCorrect = password === correctPassword;
