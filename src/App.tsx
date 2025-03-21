@@ -27,7 +27,8 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated } = useAuth();
   
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+    const loginPath = import.meta.env.MODE === 'production' ? '/guest-portal/login' : '/login';
+    return <Navigate to={loginPath} replace />;
   }
   
   return <>{children}</>;
@@ -134,7 +135,7 @@ const App = () => (
       <AuthProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.MODE === 'production' ? '/guest-portal' : '/'}>
           <AnimatePresence mode="wait">
             <AppRoutes />
           </AnimatePresence>
