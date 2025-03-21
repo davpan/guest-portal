@@ -26,17 +26,7 @@ const queryClient = new QueryClient();
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated } = useAuth();
   
-  console.log('Protected Route Check:', {
-    isAuthenticated,
-    currentPath: window.location.pathname,
-    currentURL: window.location.href,
-    baseURL: import.meta.env.BASE_URL,
-    referrer: document.referrer,
-    historyState: history.state
-  });
-
   if (!isAuthenticated) {
-    console.log('Redirecting to login');
     return <Navigate to="/login" replace />;
   }
   
@@ -45,12 +35,6 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 
 // App Routes with Authentication
 const AppRoutes = () => {
-  console.log('AppRoutes Render:', {
-    pathname: window.location.pathname,
-    search: window.location.search,
-    hash: window.location.hash
-  });
-
   return (
     <Routes>
       <Route path="/login" element={<PasswordEntry />} />
