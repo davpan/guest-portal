@@ -17,8 +17,8 @@ const Index = () => {
 
   return (
     <PageTransition>
-      <div className="container max-w-4xl mx-auto px-3 min-h-[calc(100vh-theme(spacing.16))]">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 py-4">
+      <div className="container max-w-4xl mx-auto h-full">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           {menuItems.map((item, index) => (
             <ActionCard
               key={item.title}

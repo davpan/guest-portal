@@ -40,9 +40,9 @@ const AppRoutes = () => {
       
       <Route path="/" element={
         <ProtectedRoute>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen overflow-hidden">
             <Header />
-            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
+            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6 flex flex-col">
               <Index />
             </main>
           </div>
@@ -51,9 +51,9 @@ const AppRoutes = () => {
       
       <Route path="/wifi" element={
         <ProtectedRoute>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen overflow-hidden">
             <Header />
-            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
+            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6 flex flex-col">
               <Wifi />
             </main>
           </div>
@@ -62,9 +62,9 @@ const AppRoutes = () => {
       
       <Route path="/lighting" element={
         <ProtectedRoute>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen overflow-hidden">
             <Header />
-            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
+            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6 flex flex-col">
               <Lighting />
             </main>
           </div>
@@ -73,9 +73,9 @@ const AppRoutes = () => {
       
       <Route path="/tv" element={
         <ProtectedRoute>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen overflow-hidden">
             <Header />
-            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
+            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6 flex flex-col">
               <TV />
             </main>
           </div>
@@ -84,9 +84,9 @@ const AppRoutes = () => {
       
       <Route path="/music" element={
         <ProtectedRoute>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen overflow-hidden">
             <Header />
-            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
+            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6 flex flex-col">
               <Music />
             </main>
           </div>
@@ -95,9 +95,9 @@ const AppRoutes = () => {
       
       <Route path="/parking" element={
         <ProtectedRoute>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen overflow-hidden">
             <Header />
-            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
+            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6 flex flex-col">
               <Parking />
             </main>
           </div>
@@ -106,9 +106,9 @@ const AppRoutes = () => {
       
       <Route path="/other" element={
         <ProtectedRoute>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen overflow-hidden">
             <Header />
-            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6">
+            <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6 flex flex-col">
               <Other />
             </main>
           </div>
