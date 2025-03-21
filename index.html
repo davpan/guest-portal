@@ -16,15 +16,8 @@
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
-          var newPath = l.pathname.slice(0, -1);
-          
-          // Handle /guest-portal base path in production
-          if (!newPath.startsWith('/guest-portal') && window.location.hostname !== 'localhost') {
-            newPath = '/guest-portal' + newPath;
-          }
-
           window.history.replaceState(null, null,
-              newPath + decoded + l.hash
+              l.pathname.slice(0, -1) + decoded + l.hash
           );
         }
       }(window.location))
