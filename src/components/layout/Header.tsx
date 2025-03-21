@@ -15,28 +15,25 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full py-6 px-4 sm:px-6 md:px-8 flex justify-between items-center">
+    <header className="w-full py-8 px-6 md:px-12 lg:px-24 flex justify-between items-center border-b border-primary/10">
       <div className="flex items-center">
         <Link 
           to="/" 
-          className="flex items-center group"
+          className="flex flex-col items-start group"
           aria-label="Home"
         >
-          <div className="p-2 rounded-full bg-accent/50 mr-3 transition-colors group-hover:bg-accent">
-            <Home className="h-5 w-5 text-primary" />
-          </div>
-          <span className="text-xl font-medium tracking-tight">27 Ramona</span>
+          <span className="font-cormorant text-3xl font-light tracking-widest text-primary">RAMONA</span>
+          <span className="font-montserrat text-xs tracking-[0.3em] text-primary/70 mt-1">GUEST PORTAL</span>
         </Link>
       </div>
       
       <Button 
         variant="ghost" 
-        size="sm" 
         onClick={handleLogout}
-        className="flex items-center gap-1"
+        className="btn-luxury group"
       >
-        <LogOut className="h-4 w-4" />
-        <span>Logout</span>
+        <span>Sign Out</span>
+        <LogOut className="h-4 w-4 ml-2 opacity-70 group-hover:opacity-100 transition-opacity" />
       </Button>
     </header>
   );
