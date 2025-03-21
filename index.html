@@ -16,8 +16,13 @@
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
+          var newPath = l.pathname.slice(0, -1);
+          // Handle /guest-portal base path in production
+          if (!newPath.startsWith('/guest-portal') && window.location.hostname !== 'localhost') {
+            newPath = '/guest-portal' + newPath;
+          }
           window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
+              newPath + decoded + l.hash
           );
         }
       }(window.location))
@@ -25,9 +30,9 @@
   </head>
 
   <body>
-    <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <div id="root"></div>
     <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
