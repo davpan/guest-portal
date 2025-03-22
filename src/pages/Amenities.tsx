@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Plug, Coffee, ShowerHead } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Plug, Coffee, ShowerHead } from 'lucide-react';
+import BackButton from '@/components/ui-custom/BackButton';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import PageTransition from '@/components/layout/PageTransition';
@@ -11,11 +10,7 @@ const AmenitiesPage = () => {
     <PageTransition>
       <div className="container max-w-2xl mx-auto">
         <div className="mb-8 flex items-center">
-          <Button variant="ghost" size="icon" asChild className="mr-4">
-            <Link to="/" aria-label="Back to home">
-              <ArrowLeft className="h-5 w-5" />
-            </Link>
-          </Button>
+          <BackButton />
           <h1 className="text-3xl font-bold">Amenities</h1>
         </div>
 
