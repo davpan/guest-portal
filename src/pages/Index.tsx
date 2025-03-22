@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Wifi, Lightbulb, Tv, Music, CircleParking, HelpCircle } from 'lucide-react';
+import { Wifi, Lightbulb, Tv, Music, CircleParking, MapPin } from 'lucide-react';
 import ActionCard from '@/components/ui-custom/ActionCard';
 import PageTransition from '@/components/layout/PageTransition';
 
@@ -12,7 +12,7 @@ const Index = () => {
     { title: 'Lighting', description: 'Control the lights around the house', icon: Lightbulb, to: '/lighting' },
     { title: 'Music', description: 'How to play music through the speakers', icon: Music, to: '/music' },
     { title: 'TV', description: 'Instructions for using the television', icon: Tv, to: '/tv' },
-    { title: 'Other', description: 'Additional helpful information', icon: HelpCircle, to: '/other' },
+    { title: 'Neighborhood', description: 'Discover nearby places', icon: MapPin, to: '/neighborhood' },
   ];
 
   return (

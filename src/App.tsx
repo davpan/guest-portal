@@ -14,7 +14,7 @@ import Lighting from "./pages/Lighting";
 import TV from "./pages/TV";
 import Music from "./pages/Music";
 import Parking from "./pages/Parking";
-import Other from "./pages/Other";
+import Neighborhood from "./pages/Neighborhood";
 import NotFound from "./pages/NotFound";
 
 import Header from "./components/layout/Header";
@@ -104,12 +104,12 @@ const AppRoutes = () => {
         </ProtectedRoute>
       } />
       
-      <Route path="/other" element={
+      <Route path="/neighborhood" element={
         <ProtectedRoute>
           <div className="flex flex-col min-h-screen overflow-hidden">
             <Header />
             <main className="flex-1 w-full px-4 sm:px-6 md:px-8 py-6 flex flex-col">
-              <Other />
+              <Neighborhood />
             </main>
           </div>
         </ProtectedRoute>
