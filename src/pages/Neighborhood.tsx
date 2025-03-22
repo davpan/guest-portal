@@ -4,52 +4,58 @@ import { Card } from "@/components/ui/card";
 const NeighborhoodPage = () => {
   const locations = [
     {
-      name: "16th Street BART",
-      description: "BART station with connections to SF, East Bay, and SFO",
-      address: "2000 Mission St",
-      distance: "0.8 miles",
-      icon: Train,
-      type: "Transit"
-    },
-    {
       name: "Church St Muni Station",
-      description: "J-Church Muni Metro station with downtown connections",
-      address: "Church St & 27th St",
+      description: "Fastest way to get downtown",
+      address: "Church St and Market St",
       distance: "0.1 miles",
       icon: Train,
-      type: "Transit"
+      type: "Transit",
+      mapsUrl: "https://maps.app.goo.gl/hR2UxT1APcG5BUa66"
+    },
+    {
+      name: "16th Street BART",
+      description: "Fastest way to SFO and the East Bay",
+      address: "16th St and Mission St",
+      distance: "0.2 miles",
+      icon: Train,
+      type: "Transit",
+      mapsUrl: "https://maps.app.goo.gl/cPLFaF5am483jdY59"
     },
     {
       name: "Whole Foods Market",
-      description: "Full-service grocery store with organic options",
-      address: "450 Rhode Island St",
-      distance: "0.6 miles",
+      description: "Full-service grocery store",
+      address: "2001 Market St",
+      distance: "0.2 miles",
       icon: ShoppingCart,
-      type: "Grocery"
-    },
-    {
-      name: "Verve Coffee Roasters",
-      description: "Modern cafe with specialty coffee and pastries",
-      address: "2101 Market St",
-      distance: "0.7 miles",
-      icon: Coffee,
-      type: "Coffee"
+      type: "Grocery",
+      mapsUrl: "https://maps.app.goo.gl/UaKEs2AoG9igdqZZ8"
     },
     {
       name: "Four Barrel Coffee",
-      description: "Artisanal coffee roaster with pour-over options",
+      description: "Our go-to neighborhood coffee shop",
       address: "375 Valencia St",
-      distance: "0.5 miles",
+      distance: "0.2 miles",
       icon: Coffee,
-      type: "Coffee"
+      type: "Coffee",
+      mapsUrl: "https://maps.app.goo.gl/rzMj6i8MqaPeWgcBA"
+    },
+    {
+      name: "Verve Coffee Roasters",
+      description: "Because you need more than one coffee option",
+      address: "2101 Market St",
+      distance: "0.2 miles",
+      icon: Coffee,
+      type: "Coffee",
+      mapsUrl: "https://maps.app.goo.gl/rzMj6i8MqaPeWgcBA"
     },
     {
       name: "Dolores Park",
-      description: "Popular park with city views and picnic areas",
-      address: "Dolores St & 19th St",
-      distance: "0.4 miles",
+      description: "Great place to take a walk and see a view of the city",
+      address: "Dolores St & 18th St",
+      distance: "0.6 miles",
       icon: Trees,
-      type: "Park"
+      type: "Park",
+      mapsUrl: "https://maps.app.goo.gl/NKxK2F2MrXauum479"
     }
   ];
 
@@ -67,7 +73,11 @@ const NeighborhoodPage = () => {
           {locations.map((location, index) => {
             const Icon = location.icon;
             return (
-              <Card key={index} className="p-4 hover:bg-accent transition-colors">
+              <Card 
+                key={index} 
+                className="p-4 hover:bg-accent transition-colors cursor-pointer" 
+                onClick={() => window.open(location.mapsUrl, '_blank')}
+              >
                 <div className="flex items-start space-x-4">
                   <div className="mt-1">
                     <Icon className="h-5 w-5" />
