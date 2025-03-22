@@ -1,7 +1,19 @@
-import { MapPin, Coffee, ShoppingCart, Trees, Train } from "lucide-react";
+import { MapPin, Coffee, ShoppingCart, Trees, Train, ArrowLeft } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const NeighborhoodPage = () => {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  const openLocation = (url: string) => {
+    if (isMobile) {
+      window.location.href = url;
+    } else {
+      window.open(url, '_blank');
+    }
+  };
+
   const locations = [
     {
       name: "Church St Muni Station",
@@ -62,12 +74,17 @@ const NeighborhoodPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="space-y-6">
-        <div className="space-y-2">
+        <div className="mb-8 flex items-center">
+          <Button variant="ghost" size="icon" asChild className="mr-4">
+            <Link to="/" aria-label="Back to home">
+              <ArrowLeft className="h-5 w-5" />
+            </Link>
+          </Button>
           <h1 className="text-3xl font-bold">Neighborhood Guide</h1>
-          <p className="text-muted-foreground">
-            Here are some of our favorite spots within walking distance
-          </p>
         </div>
+        <p className="text-muted-foreground">
+          Here are some of our favorite spots within walking distance
+        </p>
 
         <div className="grid gap-4 md:grid-cols-2">
           {locations.map((location, index) => {
@@ -75,8 +92,11 @@ const NeighborhoodPage = () => {
             return (
               <Card 
                 key={index} 
-                className="p-4 hover:bg-accent transition-colors cursor-pointer" 
-                onClick={() => window.open(location.mapsUrl, '_blank')}
+                className="p-4" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  openLocation(location.mapsUrl);
+                }}
               >
                 <div className="flex items-start space-x-4">
                   <div className="mt-1">
