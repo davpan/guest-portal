@@ -24,7 +24,7 @@ const ActionCard = ({ title, description, icon: Icon, to, delay = 0 }: ActionCar
       }}
     >
       <Link to={to} className="block h-full">
-        <div className="glass h-full rounded-xl p-3 sm:p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+        <div className="glass h-full rounded-xl px-3 py-4 sm:px-4 sm:py-5 transition-all duration-300 active:scale-95">
           <div className="mb-2 sm:mb-3 inline-flex p-2 rounded-xl bg-primary/5">
             <Icon className="h-5 w-5 text-primary" />
           </div>
