@@ -16,12 +16,15 @@ const AmenitiesPage = () => {
               <ArrowLeft className="h-5 w-5" />
             </Link>
           </Button>
-          <h1 className="text-3xl font-bold">House Amenities</h1>
+          <h1 className="text-3xl font-bold">Amenities</h1>
         </div>
 
         <Card className="mb-6">
           <CardHeader className="bg-primary/5 pb-4">
-            <CardTitle>Items You Might Need</CardTitle>
+            <div className="flex items-center mb-2">
+              <Plug className="h-5 w-5 mr-2 text-primary" />
+              <CardTitle>Items You Might Need</CardTitle>
+            </div>
             <CardDescription>Find what you need around the house</CardDescription>
           </CardHeader>
           <CardContent className="pt-6">
