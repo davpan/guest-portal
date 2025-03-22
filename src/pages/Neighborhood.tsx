@@ -1,5 +1,8 @@
-import { MapPin, Coffee, ShoppingCart, Trees, Train } from "lucide-react";
+import { MapPin, Coffee, ShoppingCart, Trees, Train, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import PageTransition from "@/components/layout/PageTransition";
 
 const NeighborhoodPage = () => {
   const locations = [
@@ -54,16 +57,24 @@ const NeighborhoodPage = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="space-y-6">
-        <div className="space-y-2">
+    <PageTransition>
+      <div className="container max-w-2xl mx-auto">
+        <div className="mb-8 flex items-center">
+          <Button variant="ghost" size="icon" asChild className="mr-4">
+            <Link to="/" aria-label="Back to home">
+              <ArrowLeft className="h-5 w-5" />
+            </Link>
+          </Button>
           <h1 className="text-3xl font-bold">Neighborhood Guide</h1>
+        </div>
+
+        <div className="space-y-2 mb-6">
           <p className="text-muted-foreground">
             Here are some of our favorite spots within walking distance
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2">
           {locations.map((location, index) => {
             const Icon = location.icon;
             return (
@@ -94,7 +105,7 @@ const NeighborhoodPage = () => {
           })}
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 };
 
