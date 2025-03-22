@@ -1,19 +1,7 @@
-import { MapPin, Coffee, ShoppingCart, Trees, Train, ArrowLeft } from "lucide-react";
+import { MapPin, Coffee, ShoppingCart, Trees, Train } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const NeighborhoodPage = () => {
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-  const openLocation = (url: string) => {
-    if (isMobile) {
-      window.location.href = url;
-    } else {
-      window.open(url, '_blank');
-    }
-  };
-
   const locations = [
     {
       name: "Church St Muni Station",
@@ -21,8 +9,7 @@ const NeighborhoodPage = () => {
       address: "Church St and Market St",
       distance: "0.1 miles",
       icon: Train,
-      type: "Transit",
-      mapsUrl: "https://maps.app.goo.gl/hR2UxT1APcG5BUa66"
+      type: "Transit"
     },
     {
       name: "16th Street BART",
@@ -30,8 +17,7 @@ const NeighborhoodPage = () => {
       address: "16th St and Mission St",
       distance: "0.2 miles",
       icon: Train,
-      type: "Transit",
-      mapsUrl: "https://maps.app.goo.gl/cPLFaF5am483jdY59"
+      type: "Transit"
     },
     {
       name: "Whole Foods Market",
@@ -39,8 +25,7 @@ const NeighborhoodPage = () => {
       address: "2001 Market St",
       distance: "0.2 miles",
       icon: ShoppingCart,
-      type: "Grocery",
-      mapsUrl: "https://maps.app.goo.gl/UaKEs2AoG9igdqZZ8"
+      type: "Grocery"
     },
     {
       name: "Four Barrel Coffee",
@@ -48,8 +33,7 @@ const NeighborhoodPage = () => {
       address: "375 Valencia St",
       distance: "0.2 miles",
       icon: Coffee,
-      type: "Coffee",
-      mapsUrl: "https://maps.app.goo.gl/rzMj6i8MqaPeWgcBA"
+      type: "Coffee"
     },
     {
       name: "Verve Coffee Roasters",
@@ -57,8 +41,7 @@ const NeighborhoodPage = () => {
       address: "2101 Market St",
       distance: "0.2 miles",
       icon: Coffee,
-      type: "Coffee",
-      mapsUrl: "https://maps.app.goo.gl/rzMj6i8MqaPeWgcBA"
+      type: "Coffee"
     },
     {
       name: "Dolores Park",
@@ -66,38 +49,25 @@ const NeighborhoodPage = () => {
       address: "Dolores St & 18th St",
       distance: "0.6 miles",
       icon: Trees,
-      type: "Park",
-      mapsUrl: "https://maps.app.goo.gl/NKxK2F2MrXauum479"
+      type: "Park"
     }
   ];
 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="space-y-6">
-        <div className="mb-8 flex items-center">
-          <Button variant="ghost" size="icon" asChild className="mr-4">
-            <Link to="/" aria-label="Back to home">
-              <ArrowLeft className="h-5 w-5" />
-            </Link>
-          </Button>
+        <div className="space-y-2">
           <h1 className="text-3xl font-bold">Neighborhood Guide</h1>
+          <p className="text-muted-foreground">
+            Here are some of our favorite spots within walking distance
+          </p>
         </div>
-        <p className="text-muted-foreground">
-          Here are some of our favorite spots within walking distance
-        </p>
 
         <div className="grid gap-4 md:grid-cols-2">
           {locations.map((location, index) => {
             const Icon = location.icon;
             return (
-              <Card 
-                key={index} 
-                className="p-4" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  openLocation(location.mapsUrl);
-                }}
-              >
+              <Card key={index} className="p-4 hover:bg-accent transition-colors">
                 <div className="flex items-start space-x-4">
                   <div className="mt-1">
                     <Icon className="h-5 w-5" />
