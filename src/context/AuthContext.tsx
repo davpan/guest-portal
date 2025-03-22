@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 export type AuthContextType = {
   isAuthenticated: boolean;
+  isLoading: boolean;
   login: (password: string) => boolean;
   logout: () => void;
 };
@@ -9,11 +10,15 @@ export type AuthContextType = {
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Check if the user is already authenticated from local storage
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Initialize auth state from localStorage
+  useEffect(() => {
     const storedAuth = localStorage.getItem('isAuthenticated');
-    return storedAuth === 'true';
-  });
+    setIsAuthenticated(storedAuth === 'true');
+    setIsLoading(false);
+  }, []);
 
   const login = (password: string): boolean => {
     const correctPassword = import.meta.env.VITE_SITE_PASSWORD || 'guest';
@@ -36,7 +41,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, isLoading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
